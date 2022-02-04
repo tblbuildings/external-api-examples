@@ -1,0 +1,28 @@
+<tr>
+    <td colspan="2">
+        <table class="table mb-0">
+            <thead>
+            <tr>
+                <th scope="col">CO</th>
+                <th scope="col">CO2</th>
+                <th scope="col">CH2O</th>
+                <th scope="col">Relative Humidity</th>
+                <th scope="col">Score</th>
+                <th scope="col">Ttemperature</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% site?.iaq.forEach(function(iaq){ %>
+                <tr>
+                    <td><%= iaq.co %></td>
+                    <td><%= iaq.co2 %></td>
+                    <td><%= iaq.ch2o %></td>
+                    <td><%= iaq.relativeHumidity %></td>
+                    <td><%= iaq.score %></td>
+                    <td><%= iaq.temperature %></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </td>
+</tr>
