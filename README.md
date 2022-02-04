@@ -11,7 +11,7 @@ If you don't have node.js installed you can get it at http://nodejs.org for your
 Getting an API Key
 ===================
 
-To make the sample applciation work you will need to add environment variable `API_KEY` and set your Api key into `.env` file.
+To make the sample application work you will need to add `.env` file, add variable `API_KEY` and set your Api key as value.
 
 Running The Application
 =========================
