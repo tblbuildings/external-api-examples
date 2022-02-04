@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const api = require('../services/api');
 
-/* GET sites list. */
-router.get('/', function(req, res, next) {
-	res.render('sites', { title: 'Express' });
+/* GET sites page. */
+router.get('/', function (req, res, next) {
+	api.getSites().then((sites => {
+		res.render('sites', {sites: sites});
+	}))
 });
 
 module.exports = router;
