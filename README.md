@@ -1,7 +1,7 @@
-Tblbuildings API Example
+API Example
 ====================
 
-The Tblbuildings API example is a sample app that uses tblbuildings api and serves as an example of how to perform authentication and simple requests.
+The API example is a sample app that uses TBL's API and serves as an example of how to perform authentication and simple requests.
 
 Installation
 ==================
