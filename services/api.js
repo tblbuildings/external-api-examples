@@ -74,6 +74,29 @@ const api = {
 		} catch (error) {
 			return null;
 		}
+	},
+	errorExample: async () => {
+		try {
+			const authorizeResponse = await api.authorize();
+			return axios.post(`${API_HOST}/external-api-ms/graphql`, {
+				query: `
+				query IaqHistoricalData {
+					iaqHistoricalData(systemId: 20, from: "2022-01-01T16:1:00.000Z", to: "2022-03-15T16:16:22.202Z") {
+					  timestamp
+					  co
+					  co2
+					  tvoc
+					}
+				  }`
+			}, {
+				headers: {
+					'Content-Type': 'application/json',
+					'Authorization': `Bearer ${authorizeResponse.access_token}`
+				}
+			}).then(({data}) => data.errors);
+		} catch (error) {
+			return error;
+		}
 	}
 }
 
