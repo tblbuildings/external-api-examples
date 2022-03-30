@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Tblbuildings API Demo</title>
+    <link rel='stylesheet' href='./stylesheets/bootstrap.min.css'/>
+</head>
+<body>
+<%- include('../views/header'); %>
+<div class="container">
+    <div class="row">
+        <h1>Error</h1>
+
+        <table class="table table-striped table-hover">
+            <thead>
+            <tr>
+                <th scope="col">Status</th>
+                <th scope="col">Message</th>
+            </tr>
+            </thead>
+            <tbody>
+            <%  errors.forEach(function(error){ %>
+                <tr>
+                    <th scope="row"><%= error.statusCode %></th>
+                    <td><%= error.message %></td>
+                </tr>
+            <% }); %>
+            </tbody>
+        </table>
+
+    </div>
+</div>
+</body>
+</html>
