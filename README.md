@@ -13,6 +13,14 @@ Getting an API Key
 
 To make the sample application work you will need to add `.env` file, add variable `API_KEY` and set your Api key as value.
 
+Setting environment configuration
+===================
+If the `API_KEY` was created for the development environment then the `API_HOST` variable in `config.js` file should be changed to below
+`API_HOST='https://api.dev-orion.tblbuildings.com'`
+
+If the `API_KEY` was created for the production environment then the `API_HOST` variable in `config.js` file should be changed to below
+`API_HOST='https://api.orion.tblbuildings.com'`
+
 Running The Application
 =========================
 
