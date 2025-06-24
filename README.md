@@ -6,6 +6,7 @@ The API example is a sample app that uses TBL's API and serves as an example of 
 Installation
 ==================
 
+Ensure that you installed the version specified in `.nvmrc` file.
 If you don't have node.js installed you can get it at http://nodejs.org for your platform. 
 
 Getting an API Key

@@ -14,6 +14,7 @@
             <tbody>
             <% site?.iaq.forEach(function(iaq){ %>
                 <tr>
+                    <td><a href="/iaq/<%= iaq.id %>"> <%= iaq.id %> </a></td>
                     <td><%= iaq.co %></td>
                     <td><%= iaq.co2 %></td>
                     <td><%= iaq.ch2o %></td>
