@@ -2,6 +2,8 @@
 
 The API example is a sample app that uses TBL's API and serves as an example of how to perform authentication and simple requests.
 
+For more API documentation please see https://api.orion.tblbuildings.com/external-api-ms/graphql
+
 # Installation
 
 Ensure that you installed the version specified in `.nvmrc` file.
