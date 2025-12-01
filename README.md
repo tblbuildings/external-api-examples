@@ -6,9 +6,9 @@
 - [Running The Application](#running-the-application)
 - [Application Architecture](#application-architecture)
 - [Webhook Subscriptions](#webhook-subscriptions)
-  - [WEBHOOK_ADDED](#webhook-added)
-  - [WEBHOOK_REMOVED](#webhook-removed)
-  - [SUBSCRIPTION_UPDATE](#subscription-update)
+  - [WEBHOOK_ADDED](#webhook_added)
+  - [WEBHOOK_REMOVED](#webhook_removed)
+  - [SUBSCRIPTION_UPDATE](#subscription_update)
 
 # API Example
 
