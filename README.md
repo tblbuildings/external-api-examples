@@ -1,7 +1,10 @@
 ## Table of Contents
-- [API Example](#API_Example)
+- [API Example](#api_example)
 - [Installation](#installation)
-- [Usage](#usage)
+- [Getting an API Key](#getting_an_api_key)
+- [Setting environment configuration](#setting_environment_configuration)
+- [Running The Application](#running_the_application)
+- [Application Architecture](#application_architecture)
 - [Webhook Events](#webhook-events)
   - [WEBHOOK_ADDED](#webhook_added)
   - [WEBHOOK_REMOVED](#webhook_removed)
