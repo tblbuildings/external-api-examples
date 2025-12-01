@@ -45,7 +45,7 @@ Below you’ll find details on when each event is triggered and what the payload
 
 ---
 
-## `WEBHOOK_REM`
+## `WEBHOOK_ADDED`
 
 ### **When is this event sent?**
 This event is sent **immediately after your webhook has been successfully registered** on the Orion platform.  
