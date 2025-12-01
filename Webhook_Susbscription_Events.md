@@ -1,7 +1,7 @@
 ## `WEBHOOK_ADDED`
 
 ### **When is this event sent?**
-This event is sent **immediately after your webhook has been successfully registered** on the Orion platform.  
+This event is sent immediately after your webhook has been successfully registered on the TBL platform, Admin web app.  
 Use this to confirm that your endpoint is active and ready to receive future events.
 
 ### **Example Payload**
@@ -17,8 +17,8 @@ Use this to confirm that your endpoint is active and ready to receive future eve
 ## `WEBHOOK_REMOVED`
 
 ### **When is this event sent?**
-This event is delivered **whenever an existing webhook is removed**—either manually or by an automated system process.  
-You can use this to clean up integrations or stop expecting further webhook communication.
+This event is delivered when API key is deleted from Admin web app.
+You can use this to clean up integrations on your side and stop expecting further webhook communication.
 
 ### **Example Payload**
 ```json
@@ -34,13 +34,12 @@ You can use this to clean up integrations or stop expecting further webhook comm
 ## `SUBSCRIPTION_UPDATE`
 
 ### **When is this event sent?**
-This event is triggered **any time asset subscription data changes** for your api-key.
+This event is triggered every time when new asset or metric were added or removed to current api-key.
 
-Common triggers include:
+Triggers include:
 
 - Adding or removing asset from subscription 
-- Adding or removing metrics from asset subscription
-- Bulk asset subscription changes
+- Adding or removing metrics from subscribed asset
 
 Use this event to keep your system in sync with the assets and metrics your api-key is tracking.
 
