@@ -38,8 +38,8 @@ This event is triggered every time when new asset or metric were added or remove
 
 Triggers include:
 
-- Adding or removing asset from subscription 
-- Adding or removing metrics from subscribed asset
+- Adding or removing asset from api-key subscription
+- Adding or removing metrics from api-key subscription
 
 Use this event to keep your system in sync with the assets and metrics your api-key is tracking.
 
