@@ -1,15 +1,14 @@
 ## Table of Contents
-- [API Example](#api_example)
+- [API Example](#api-example)
 - [Installation](#installation)
-- [Getting an API Key](#getting_an_api_key)
-- [Setting environment configuration](#setting_environment_configuration)
-- [Running The Application](#running_the_application)
-- [Application Architecture](#application_architecture)
-- [Webhook Events](#webhook-events)
-  - [WEBHOOK_ADDED](#webhook_added)
-  - [WEBHOOK_REMOVED](#webhook_removed)
-  - [SUBSCRIPTION_UPDATE](#subscription_update)
-- [License](#license)
+- [Getting an API Key](#getting-an-api-key)
+- [Setting environment configuration](#setting-environment-configuration)
+- [Running The Application](#running-the-application)
+- [Application Architecture](#application-architecture)
+- [Webhook Subscriptions](#webhook-subscriptions)
+  - [WEBHOOK_ADDED](#webhook-added)
+  - [WEBHOOK_REMOVED](#webhook-removed)
+  - [SUBSCRIPTION_UPDATE](#subscription-update)
 
 # API Example
 
