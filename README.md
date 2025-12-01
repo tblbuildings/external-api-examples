@@ -37,25 +37,21 @@ The implementation for the get IAQ data for sites can be found in `/routes/iaq.j
 
 Logic that speaks directly to the tblbuildings servers is all encapsulated in the `/services/api.js` file. This is an implementation of the api itself. For more API documentation please see https://api.orion.tblbuildings.com/external-api-ms/graphql
 
-# Webhook Subscriptions
+# 🔔 Webhook Subscriptions
 
-## Webhook Event Types
-
-The Orion platform sends specific event messages to your registered webhook endpoint whenever certain actions occur.
-Below is a description of each event, when it is triggered, and the structure of the payload you will receive.
+Your Orion webhook will receive events whenever key actions occur within your api-key.  
+Each event includes a `type`, human-readable `message`, and a `timestamp`.  
+Below you’ll find details on when each event is triggered and what the payload looks like.
 
 ---
 
-### 📘 `WEBHOOK_REGISTERED`
+## 📘 `WEBHOOK_REGISTERED`
 
-#### **When is this event sent?**
+### **When is this event sent?**
+This event is sent **immediately after your webhook has been successfully registered** on the Orion platform.  
+Use this to confirm that your endpoint is active and ready to receive future events.
 
-This event is delivered **immediately after a webhook is successfully registered** on the Orion platform.
-
-This allows your system to verify that the webhook registration process has completed and that your endpoint is active.
-
-#### **Example Payload**
-
+### **Example Payload**
 ```json
 {
   "type": "WEBHOOK_REGISTERED",
@@ -66,16 +62,13 @@ This allows your system to verify that the webhook registration process has comp
 
 ---
 
-### 📕 `WEBHOOK_DELETED`
+## 📕 `WEBHOOK_DELETED`
 
-#### **When is this event sent?**
+### **When is this event sent?**
+This event is delivered **whenever an existing webhook is removed**—either manually or by an automated system process.  
+You can use this to clean up integrations or stop expecting further webhook communication.
 
-This event is sent **after a webhook has been removed** from the Orion platform—either by a user action or an automated cleanup process.
-
-Use this to disable integrations or stop expecting future events.
-
-#### **Example Payload**
-
+### **Example Payload**
 ```json
 {
   "type": "WEBHOOK_DELETED",
@@ -86,22 +79,20 @@ Use this to disable integrations or stop expecting future events.
 
 ---
 
-### 🔄 `SUBSCRIPTION_UPDATE`
+## 🔄 `SUBSCRIPTION_UPDATE`
 
-#### **When is this event sent?**
+### **When is this event sent?**
+This event is triggered **any time asset subscription data changes** for your api-key.
 
-This event is delivered **whenever asset subscriptions for your tenant change**.
+Common triggers include:
 
-Triggers include:
+- Adding or removing asset from subscription 
+- Adding or removing metrics from asset subscription
+- Bulk asset subscription changes
 
-* A user adds or removes asset subscriptions
-* A system process updates subscription rules
-* Bulk updates to asset subscription lists
+Use this event to keep your system in sync with the assets and metrics your api-key is tracking.
 
-Your system can use this event to stay in sync with what assets it should track.
-
-#### **Example Payload**
-
+### **Example Payload**
 ```json
 {
   "type": "SUBSCRIPTION_UPDATE",
@@ -109,32 +100,27 @@ Your system can use this event to stay in sync with what assets it should track.
   "timestamp": "2025-01-01T12:00:00.000Z",
   "currentAssetSubscriptions": [
     {
-      assetId: 1,
-      metricIds: [1,2,3]
+      "assetId": 1,
+      "metricIds": [1, 2, 3]
     },
     {
-      assetId: 2,
-      metricIds: [4,5,6]
+      "assetId": 2,
+      "metricIds": [4, 5, 6]
     },
     {
-      assetId: 3,
-      metricIds: [7,8,9]
-    },
+      "assetId": 3,
+      "metricIds": [7, 8, 9]
+    }
   ]
 }
 ```
 
 ---
 
-### Summary Table
+## 📊 Summary Table
 
-| Event Type            | Trigger Moment                      | Contains Additional Data  |
-| --------------------- | ----------------------------------- | ------------------------- |
-| `WEBHOOK_REGISTERED`  | After webhook is successfully added | ❌ No                      |
-| `WEBHOOK_DELETED`     | After webhook is removed            | ❌ No                      |
-| `SUBSCRIPTION_UPDATE` | When asset subscriptions change     | ✅ Yes — subscription list |
-
----
-
-If you want, I can also generate a diagram, add HMAC verification examples, or create a full README template including setup instructions.
-
+| Event Type             | Trigger Moment                      | Additional Data Included |
+|------------------------|--------------------------------------|---------------------------|
+| `WEBHOOK_REGISTERED`   | After webhook is successfully added | ❌ No                     |
+| `WEBHOOK_DELETED`      | After webhook is removed            | ❌ No                     |
+| `SUBSCRIPTION_UPDATE`  | When asset subscriptions change     | ✅ Yes — subscription list |
