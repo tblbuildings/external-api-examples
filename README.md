@@ -1,3 +1,13 @@
+## Table of Contents
+- [API Example](#API_Example)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Webhook Events](#webhook-events)
+  - [WEBHOOK_ADDED](#webhook_added)
+  - [WEBHOOK_REMOVED](#webhook_removed)
+  - [SUBSCRIPTION_UPDATE](#subscription_update)
+- [License](#license)
+
 # API Example
 
 The API example is a sample app that uses TBL's API and serves as an example of how to perform authentication and simple requests.
