@@ -1,4 +1,4 @@
-## `WEBHOOK_ADDED`
+## `WEBHOOK_REGISTERED`
 
 ### **When is this event sent?**
 This event is sent immediately after your webhook has been successfully registered on the TBL platform, Admin web app.  
@@ -7,14 +7,14 @@ Use this to confirm that your endpoint is active and ready to receive future eve
 ### **Example Payload**
 ```json
 {
-  "type": "WEBHOOK_ADDED",
+  "type": "WEBHOOK_REGISTERED",
   "message": "Successfully added webhook on Orion platform",
   "timestamp": "2025-01-01T12:00:00.000Z"
 }
 ```
 
 
-## `WEBHOOK_REMOVED`
+## `WEBHOOK_DELETED`
 
 ### **When is this event sent?**
 This event is delivered when API key is deleted from Admin web app.
@@ -23,7 +23,7 @@ You can use this to clean up integrations on your side and stop expecting furthe
 ### **Example Payload**
 ```json
 {
-  "type": "WEBHOOK_REMOVED",
+  "type": "WEBHOOK_DELETED",
   "message": "Removed webhook from Orion platform",
   "timestamp": "2025-01-01T12:00:00.000Z"
 }
